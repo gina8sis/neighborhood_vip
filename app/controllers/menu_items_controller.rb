@@ -1,4 +1,4 @@
-MenuItemsController < ApplicationController
+class MenuItemsController < ApplicationController
 
 
   def new
@@ -7,16 +7,16 @@ MenuItemsController < ApplicationController
   end
 
   def create
-  @item = Item.new(item_params)
-  if @item.save
-    redirect_to(show_path)
-  else
-    render :new
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to(show_path)
+    else
+      render :new
+    end
   end
-end
 
   def show
-  @items = Item.all
+    @items = Item.all
   end
 
   def edit
