@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       resources :menu_items
       resources :orders
 
-      match "/orders2" => "orders#create", via: :options
+      match "/orders" => "orders#create", via: [:options,:post]
 
     end
   end
